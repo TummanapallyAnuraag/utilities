@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Text to QR Code</title>
+    <style>
+        body{
+            font-family: monospace;
+            background-color: #f0f0f0;
+        }
+        .centre{
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+            background-color: white;
+            display: block;
+
+        }
+        .shadow{
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+            box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+		#qrcode {
+			width:160px;
+			height:160px;
+			margin-top:15px;
+		}
+		textarea{
+			padding: 1em;
+		}
+    </style>
+</head>
+<body>
+    <div class="centre shadow" style="padding: 10px 0px;">
+        <h1 class="centre">
+            <u>Text to QR Code</u>
+        </h1>
+		<div class="centre" style="min-height: 400px;">
+			<textarea id="text" type="text" placeholder="some random text." style="width:80%" onkeyup="makeCode();" rows="4" cols="50"></textarea>
+			<div id="qrcode"></div>
+		</div>
+
+        <div class="centre buttons" >
+            <hr>
+        <footer> CREDITS: QRcode library from <a href="https://davidshimjs.github.io/qrcodejs/" title="qrcodejs" target="_blank">qrcodejs</a></footer>
+        </div>
+    </div>
+	<script type="text/javascript" src="qrcode.min.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
