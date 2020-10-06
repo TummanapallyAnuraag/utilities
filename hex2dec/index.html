@@ -1,0 +1,91 @@
+<head>
+	<script>
+		function convert(){
+				if(document.getElementById("hex").value != ""){
+					hexString = document.getElementById("hex").value;
+					num = parseInt(hexString, 16);
+					document.getElementById("dec").value = num;
+				}else if(document.getElementById("dec").value != ""){
+					num = parseInt(document.getElementById("dec").value);
+					hexString = num.toString(16);
+					document.getElementById("hex").value = hexString;
+				}else{
+					alert("Enter either hex or dec number to process");
+				}
+		}
+	</script>
+	<style>
+		/* @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap'); */
+		@font-face {
+			font-family: Macondo;
+			src: url(Macondo-Regular.ttf);
+		}
+		body{
+			font-family: 'Macondo', cursive;
+		}
+		.card {
+			margin-top: 1em;
+			text-align: center;
+			background-color: lightgrey;
+			padding: 1em;
+			max-width: 500px;
+			margin: auto;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		h1{
+			text-decoration: underline;
+		}
+		input {
+		    width: 300px;
+		    font-size: 25px;
+			border-radius: 10px;
+			outline: none;
+			font-family: 'Macondo', cursive;
+		}
+		input::placeholder {
+			font-family: 'Macondo', cursive;
+			font-style: italic;
+			text-align: center;
+		}
+		button{
+			font-family: 'Macondo', cursive;
+			width: 300px;
+			outline: none;
+			background-color: lightgreen;
+			padding: 5px;
+			font-size: 25px;
+			cursor: pointer;
+			border-radius: 60px;
+			box-shadow: 5px 5px 5px #999;
+		}
+		button:active{
+			background-color: white;
+			transform: translateY(5px);
+		}
+		table{
+			margin: auto;
+		}
+		table td{
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<h1>Convert Dec to Hex and viceversa</h1>
+		<table>
+			<tr>
+				<td>HEXADECIMAL No.</td>
+				<td><input id="hex" placeholder="Omit 0x" value="" type="text"></td>
+			</tr>
+			<tr>
+				<td>DECIMAL No.</td>
+				<td><input id="dec" placeholder="" value="" type="number"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button id="convert" onclick="convert();">CONVERT</button></td>
+			</tr>
+		</table>
+	</div>
+</body>
