@@ -1,0 +1,59 @@
+#pomodoro{
+    border: 1px solid lightblue;
+    border-radius: 25px;
+    padding: 1em 2em;
+    font-size: 5em;
+    width: 50%;
+    margin: auto;
+}
+
+#pomodoro table{
+    padding: 0px;
+    margin: auto;
+}
+
+#pomodoro table td{
+    text-align: center;
+}
+
+.pomodoro-comment{
+    color: lightgray;
+}
+
+#controls{
+    width: 50%;
+    margin: auto;
+}
+
+#controls #time{
+    width: 5em;
+}
+
+#controls button{
+    display: block;
+    margin: auto;
+    width: 5em;
+    background-color: lightgreen;
+    border-radius: 25px;
+    border: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 5px 5px 5px #999;
+}
+
+#controls button:hover{
+    background-color: green;
+}
+
+#controls button:active{
+    background-color: green;
+    box-shadow: 3px 3px 3px #999;
+    transform: translateY(4px);
+}
+
+.critical{
+    background-color: red;
+}
