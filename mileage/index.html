@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Fuel Cost Calculator</title>
+    <script src="index.js"></script>
+    <style>
+        @font-face {
+            font-family: Macondo;
+            src: url(Macondo-Regular.ttf);
+        }
+        body {
+            font-family: 'Macondo', cursive;
+            margin: 0;
+            padding: 0;
+        }
+        .card {
+            margin-top: 2em;
+            text-align: center;
+            background-color: lightgrey;
+            padding: 2em;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 10px;
+        }
+        h1 {
+            text-decoration: underline;
+            margin-top: 0;
+        }
+        .status {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 1em;
+            font-style: italic;
+        }
+        input {
+            width: 300px;
+            font-size: 20px;
+            border-radius: 10px;
+            outline: none;
+            font-family: 'Macondo', cursive;
+            padding: 8px;
+            border: 1px solid #999;
+            box-sizing: border-box;
+        }
+        input::placeholder {
+            font-family: 'Macondo', cursive;
+            font-style: italic;
+            text-align: center;
+        }
+        button {
+            font-family: 'Macondo', cursive;
+            width: 300px;
+            outline: none;
+            background-color: lightgreen;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 60px;
+            box-shadow: 5px 5px 5px #999;
+            border: none;
+            margin-top: 10px;
+        }
+        button:active {
+            background-color: white;
+            transform: translateY(5px);
+        }
+        button:hover {
+            background-color: #90EE90;
+        }
+        table {
+            margin: auto;
+            width: 100%;
+        }
+        table td {
+            font-size: 18px;
+            padding: 10px;
+            text-align: left;
+        }
+        table td:first-child {
+            font-weight: bold;
+            width: 50%;
+        }
+        table td:last-child {
+            text-align: right;
+        }
+        .result {
+            margin-top: 2em;
+            padding: 1.5em;
+            background-color: #E8F5E9;
+            border-radius: 10px;
+            display: none;
+        }
+        .result.show {
+            display: block;
+        }
+        .result-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2E7D32;
+            margin: 10px 0;
+        }
+        .result-label {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Daily Fuel Cost Calculator</h1>
+        <div class="status" id="status">Loading fuel price...</div>
+
+        <table>
+            <tr>
+                <td>Commute Distance (km)</td>
+                <td><input id="distance" type="number" placeholder="Enter distance" value=""></td>
+            </tr>
+            <tr>
+                <td>Fuel Cost (₹/liter)</td>
+                <td><input id="fuelCost" type="number" placeholder="Enter fuel cost" step="0.01" value=""></td>
+            </tr>
+            <tr>
+                <td>Mileage (km/liter)</td>
+                <td><input id="mileage" type="number" placeholder="Enter mileage" step="0.1" value="18"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="text-align: center;"><button onclick="calculateCost()">CALCULATE</button></td>
+            </tr>
+        </table>
+
+        <div class="result" id="result">
+            <div class="result-label">Daily Fuel Cost</div>
+            <div class="result-value" id="costValue">₹ 0.00</div>
+        </div>
+    </div>
+</body>
+</html>
